@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="darkreader-lock">
+<meta name="robots" content="noindex, nofollow">
+<title>Emy Ótica | Óculos de grau, sol e lentes de contato em Cravinhos</title>
+<meta name="description" content="Óculos de grau, óculos de sol, lentes de contato e óculos infantil em Cravinhos/SP. R. Bonfim, 147. Atendimento pelo WhatsApp (16) 99294-0561.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: only light;
+  --vermelho:#D8252E; --vermelho-escuro:#A9161E; --tinta:#1E1A1B; --noite:#191415;
+  --texto:#3B3536; --suave:#6C6466; --nevoa:#F2F3F5; --linha:#E2E3E7; --branco:#fff;
+  --ceu:#CDEAF5; --zap:#179A48;
+  --titulo:'Young Serif', Georgia, serif; --corpo:'Manrope', system-ui, sans-serif;
+  --raio:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--nevoa)}
+body{margin:0;font-family:var(--corpo);color:var(--texto);background:var(--nevoa);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--titulo);font-weight:400;color:var(--tinta);line-height:1.12;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+p{margin:0}
+.envelope{width:min(1160px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--vermelho);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}[data-revela]{opacity:1!important;transform:none!important}}
+
+/* ---------- topo ---------- */
+.topo{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--linha)}
+.topo .envelope{display:flex;align-items:center;justify-content:space-between;height:72px;position:relative}
+.logo{display:flex;align-items:baseline;gap:6px;text-decoration:none}
+.logo .emy{font-family:'Manrope',sans-serif;font-weight:800;font-size:2rem;letter-spacing:-.04em;color:var(--vermelho);position:relative;line-height:1}
+.logo .emy svg{position:absolute;left:.9em;top:-.2em;width:1.2em;height:auto}
+.logo .otica{font-weight:800;font-size:1.05rem;color:var(--tinta)}
+.menu{display:flex;gap:4px;align-items:center}
+.menu a{text-decoration:none;font-weight:600;font-size:.95rem;padding:10px 14px;border-radius:999px;color:var(--tinta)}
+.menu a:hover{background:var(--nevoa)}
+.menu .chamar{background:var(--vermelho);color:#fff;margin-left:6px}
+.menu .chamar:hover{background:var(--vermelho-escuro)}
+#menu-botao{display:none;width:52px;height:52px;border:0;background:none;cursor:pointer;padding:14px;border-radius:12px}
+#menu-botao span{display:block;height:3px;background:var(--vermelho);border-radius:2px;transition:transform .22s,opacity .22s}
+#menu-botao span+span{margin-top:6px}
+#menu-botao[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+#menu-botao[aria-expanded="true"] span:nth-child(2){opacity:0}
+#menu-botao[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+@media (max-width:900px){
+  #menu-botao{display:block}
+  .menu{display:none;position:absolute;top:100%;left:-20px;right:-20px;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--linha);padding:6px 20px 14px;box-shadow:0 18px 30px -20px rgba(0,0,0,.25)}
+  .menu.aberto{display:flex}
+  .menu a{min-height:52px;display:flex;align-items:center;border-radius:10px}
+  .menu .chamar{margin:8px 0 0;justify-content:center}
+}
+
+/* ---------- abertura com a tabela de exame ---------- */
+.abertura{background:radial-gradient(120% 90% at 85% 40%,#2A2022 0%,var(--noite) 60%);color:#F4EEEE;overflow:hidden}
+.abertura .envelope{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;min-height:min(640px,calc(100svh - 72px));padding-block:56px}
+.abertura h1{color:#fff;font-size:clamp(2.6rem,6vw,4.6rem)}
+.abertura h1 em{font-style:normal;color:#FF6B6F}
+.abertura .sub{margin-top:20px;font-size:1.12rem;max-width:30em;color:#D8CFD0}
+.botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.botao{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-family:var(--corpo);font-size:1rem;transition:background .2s,transform .15s}
+.botao:active{transform:scale(.97)}
+.botao.principal{background:var(--vermelho);color:#fff}
+.botao.principal:hover{background:#E8333C}
+.botao.vidro{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.botao.vidro:hover{background:rgba(255,255,255,.18)}
+.botao svg{width:20px;height:20px;flex:none}
+
+.tabela{position:relative;background:#FBFAF8;border-radius:22px;padding:34px 26px 26px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);aspect-ratio:4/5;max-height:560px;margin-left:auto;width:min(100%,440px);touch-action:pan-y;cursor:crosshair;user-select:none}
+.tabela .linhas{position:absolute;inset:34px 26px 26px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;font-family:'Manrope',sans-serif;font-weight:800;color:#141012;letter-spacing:.18em;text-align:center}
+.tabela .linhas div{line-height:1;display:flex;gap:.1em;align-items:center}
+.tabela .linhas small{font-size:10px;font-weight:600;letter-spacing:.04em;color:#B9B2B3;width:22px;text-align:right;margin-right:8px}
+.tabela .borrada{filter:blur(5px);opacity:.75}
+.tabela .nitida{-webkit-mask:var(--lente);mask:var(--lente)}
+.tabela .nitida div:nth-child(1),.tabela .nitida div:nth-child(2){color:var(--vermelho)}
+.tabela .armacao{position:absolute;left:0;top:0;width:var(--larg);height:auto;pointer-events:none;transform:translate(calc(var(--x) - 50%),calc(var(--y) - 50%));filter:drop-shadow(0 6px 10px rgba(0,0,0,.25))}
+.tabela .dica{position:absolute;left:0;right:0;bottom:-34px;text-align:center;font-size:.85rem;color:#B5AAAB}
+
+.fatos{background:#fff;border-bottom:1px solid var(--linha)}
+.fatos .envelope{display:grid;grid-template-columns:repeat(3,1fr)}
+.fatos a,.fatos div.fato{display:flex;gap:14px;align-items:center;padding:22px 8px;text-decoration:none}
+.fatos .fato+.fato{border-left:1px solid var(--linha);padding-left:28px}
+.fatos strong{display:block;color:var(--tinta);font-size:1.05rem}
+.fatos span{font-size:.92rem;color:var(--suave)}
+.fatos .ico{width:44px;height:44px;border-radius:50%;background:var(--nevoa);display:grid;place-items:center;flex:none;color:var(--vermelho)}
+.fatos .ico svg{width:22px;height:22px}
+
+/* ---------- seções ---------- */
+section{padding-block:clamp(64px,9vw,104px)}
+.branca{background:#fff}
+.chapeu{font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--vermelho);margin-bottom:12px}
+.intro{max-width:640px;margin-bottom:44px}
+.intro p{margin-top:14px;color:var(--suave);font-size:1.08rem}
+/* régua da tabela entre seções */
+.regua{height:28px;background:#fff;display:flex;justify-content:center;align-items:flex-end;gap:18px;overflow:hidden;font-weight:800;color:#E4E1E2;letter-spacing:.2em;user-select:none}
+.regua span{line-height:.8}
+
+/* promoção */
+.promo{background:var(--vermelho);color:#fff;padding-block:28px}
+.promo .envelope{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.promo p{font-family:var(--titulo);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.25}
+.promo .botao{background:#fff;color:var(--vermelho-escuro)}
+.promo .botao:hover{background:#FFE9EA}
+
+/* o que temos */
+.produtos{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.cartao{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
+.cartao .foto{background:var(--nevoa);overflow:hidden}
+.cartao .foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cartao:hover .foto img{transform:scale(1.04)}
+.cartao .txt{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cartao h3{font-size:1.45rem}
+.cartao p{color:var(--suave);font-size:.98rem}
+.cartao .pedir{margin-top:auto;padding-top:10px;font-weight:700;color:var(--vermelho-escuro);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.cartao .pedir:hover{text-decoration:underline;text-underline-offset:4px}
+.produtos .grande{grid-row:span 2}
+.produtos .grande .foto{aspect-ratio:auto;flex:1;min-height:320px}
+.produtos .medio{grid-row:span 2}
+.produtos .grande .txt,.produtos .medio .txt{flex:none}
+.produtos .medio .foto{aspect-ratio:auto;flex:1;min-height:260px}
+.semfoto .txt{background:linear-gradient(160deg,#fff 0%,#F4F9FC 100%)}
+.semfoto .lente-ico{width:64px;height:64px;color:var(--vermelho);margin-bottom:6px}
+.marcas{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;margin-top:36px;color:var(--suave);font-size:.95rem}
+.marcas b{font-family:var(--titulo);font-weight:400;font-size:1.35rem;color:var(--tinta)}
+
+/* infantil */
+.kids{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.kids .fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.kids .fotos img{border-radius:var(--raio);width:100%;aspect-ratio:9/13;object-fit:cover}
+.kids .fotos img:last-child{margin-top:48px}
+.kids ul{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:16px}
+.kids li{display:flex;gap:14px;align-items:flex-start}
+.kids li svg{width:26px;height:26px;color:var(--vermelho);flex:none;margin-top:2px}
+.kids li b{color:var(--tinta)}
+
+/* ferramenta */
+.monte{display:grid;grid-template-columns:1.2fr .8fr;gap:0;background:#fff;border:1px solid var(--linha);border-radius:24px;overflow:hidden}
+.monte .passos{padding:clamp(24px,4vw,44px)}
+.passo+.passo{margin-top:30px}
+.passo h3{font-family:var(--corpo);font-weight:800;font-size:1.02rem;color:var(--tinta);display:flex;gap:12px;align-items:baseline;margin-bottom:14px}
+.passo h3 i{font-style:normal;font-family:var(--titulo);font-size:1.5rem;color:var(--vermelho);line-height:1}
+.opcoes{display:flex;flex-wrap:wrap;gap:10px}
+.opcoes button{font-family:var(--corpo);font-size:.96rem;font-weight:600;color:var(--tinta);background:var(--nevoa);border:1px solid transparent;border-radius:999px;min-height:46px;padding:0 18px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.opcoes button:hover{border-color:#D3D4D9}
+.opcoes button[aria-pressed="true"]{background:#FDECEC;border-color:var(--vermelho);color:var(--vermelho-escuro)}
+.monte label.nome{display:block;margin-top:30px;font-weight:800;color:var(--tinta);font-size:1.02rem}
+.monte input{width:100%;margin-top:10px;font:inherit;padding:13px 16px;border:1px solid #D3D4D9;border-radius:12px;background:#fff}
+.monte input:focus{outline:none;border-color:var(--vermelho);box-shadow:0 0 0 3px #FBD5D6}
+.painel{background:var(--noite);color:#EDE6E6;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:18px;position:relative}
+.painel h3{color:#fff;font-size:1.5rem}
+.balao{background:#DCF8C6;color:#1D2A1F;border-radius:14px 14px 14px 4px;padding:16px 18px;font-size:.98rem;line-height:1.55;white-space:pre-line;min-height:140px;box-shadow:0 10px 24px -14px rgba(0,0,0,.6)}
+.painel .botao{background:var(--zap);color:#fff;justify-content:center}
+.painel .botao:hover{background:#14873F}
+.painel small{color:#A99FA0;font-size:.85rem}
+
+/* a casa e avaliações */
+.casa{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.casa img{border-radius:var(--raio);width:100%;aspect-ratio:36/43;object-fit:cover}
+.nota{display:flex;align-items:center;gap:14px;margin:22px 0 28px}
+.nota strong{font-family:var(--titulo);font-size:3rem;font-weight:400;color:var(--tinta);line-height:1}
+.estrelas{color:#F2A900;letter-spacing:2px;font-size:1.2rem}
+.depo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.depo figure{margin:0;background:var(--nevoa);border-radius:var(--raio);padding:22px}
+.depo blockquote{margin:0;font-family:var(--titulo);font-size:1.12rem;line-height:1.45;color:var(--tinta)}
+.depo figcaption{margin-top:12px;font-size:.88rem;color:var(--suave)}
+
+/* onde estamos */
+.onde{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
+.onde .info{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:32px;display:flex;flex-direction:column;gap:20px}
+.onde dl{margin:0;display:grid;gap:16px}
+.onde dt{font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.onde dd{margin:4px 0 0;color:var(--tinta);font-weight:600;font-size:1.08rem}
+.mapa{border-radius:var(--raio);overflow:hidden;min-height:340px;background:#E9EAEE center/cover;position:relative;border:1px solid var(--linha)}
+.mapa button{position:absolute;inset:0;width:100%;border:0;background:linear-gradient(180deg,rgba(30,26,27,0) 40%,rgba(30,26,27,.55));color:#fff;font:700 1rem var(--corpo);cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding:24px}
+.mapa button span{background:rgba(255,255,255,.95);color:var(--tinta);padding:12px 20px;border-radius:999px}
+.mapa iframe{border:0;width:100%;height:100%;min-height:340px;display:block}
+.mapa .pino{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);width:40px;color:var(--vermelho);filter:drop-shadow(0 4px 6px rgba(0,0,0,.3))}
+
+/* rodapé */
+.rodape{background:var(--noite);color:#B9AFB0;padding-block:56px 140px;font-size:.95rem}
+.rodape .envelope{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.rodape .logo .otica{color:#fff}
+.rodape h4{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+.rodape a{text-decoration:none}
+.rodape a:hover{color:#fff}
+.rodape p+p{margin-top:6px}
+.assina{grid-column:1/-1;border-top:1px solid #33292B;padding-top:20px;font-size:.85rem;color:#8A7F80}
+
+/* zap flutuante */
+.zap-flutua{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;background:var(--zap);display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);z-index:40;opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .25s,transform .25s}
+.zap-flutua.visivel{opacity:1;transform:none;pointer-events:auto}
+.zap-flutua svg{width:32px;height:32px;color:#fff}
+
+[data-revela]{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+[data-revela].visto{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .abertura .envelope{grid-template-columns:1fr;gap:56px;min-height:0;padding-block:44px 76px}
+  .tabela{margin-inline:auto;width:min(100%,380px)}
+  .produtos{grid-template-columns:1fr 1fr}
+  .produtos .grande{grid-column:1/-1;grid-row:auto}
+  .produtos .grande .foto{min-height:0;aspect-ratio:16/10;flex:none}
+  .produtos .medio{grid-row:auto}
+  .produtos .medio .foto{min-height:0;aspect-ratio:16/11;flex:none}
+  .kids,.casa,.onde{grid-template-columns:1fr;gap:36px}
+  .monte{grid-template-columns:1fr}
+  .rodape .envelope{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .fatos .envelope{grid-template-columns:1fr}
+  .fatos .fato+.fato{border-left:0;border-top:1px solid var(--linha);padding-left:8px}
+  .produtos{grid-template-columns:1fr}
+  .depo{grid-template-columns:1fr}
+  .rodape .envelope{grid-template-columns:1fr}
+  .kids .fotos img:last-child{margin-top:28px}
+  .promo .envelope{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="envelope">
+    <a class="logo" href="#inicio" aria-label="Emy Ótica, início">
+      <span class="emy">Emy<svg viewBox="0 0 60 20" aria-hidden="true"><g fill="none" stroke="#1E1A1B" stroke-width="2.6"><rect x="3" y="4" width="22" height="13" rx="5"/><rect x="35" y="4" width="22" height="13" rx="5"/><path d="M25 9q5-4 10 0M3 7 0 5M57 7l3-2"/></g></svg></span>
+      <span class="otica">Ótica</span>
+    </a>
+    <button id="menu-botao" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu" aria-label="Seções">
+      <a href="#oculos">Óculos</a>
+      <a href="#infantil">Infantil</a>
+      <a href="#monte">Atendimento</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#onde">Onde estamos</a>
+      <a class="chamar" href="https://wa.me/5516992940561?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Emy%20%C3%93tica." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="abertura" style="padding:0">
+  <div class="envelope">
+    <div>
+      <p class="chapeu" style="color:#FF8A8D">Ótica em Cravinhos</p>
+      <h1>Veja o <em>melhor</em> da vida.</h1>
+      <p class="sub">Óculos de grau, óculos de sol e lentes de contato, escolhidos com calma, com um cafezinho e um espaço para as crianças brincarem enquanto você experimenta.</p>
+      <div class="botoes">
+        <a class="botao principal" href="https://wa.me/5516992940561?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Emy%20%C3%93tica." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>Falar no WhatsApp</a>
+        <a class="botao vidro" href="#onde">Como chegar</a>
+      </div>
+    </div>
+    <div class="tabela" id="tabela" aria-label="Tabela de exame de vista: passe o mouse ou o dedo para ver através dos óculos" role="img">
+      <div class="linhas borrada" aria-hidden="true"></div>
+      <div class="linhas nitida" aria-hidden="true"></div>
+      <svg class="armacao" viewBox="0 0 240 90" aria-hidden="true"><g fill="none" stroke="#D8252E" stroke-width="7"><circle cx="58" cy="45" r="40"/><circle cx="182" cy="45" r="40"/><path d="M98 40q22-14 44 0"/></g></svg>
+      <p class="dica">Passe o mouse (ou o dedo) pela tabela</p>
+    </div>
+  </div>
+</section>
+
+<div class="fatos">
+  <div class="envelope">
+    <a class="fato" href="https://www.google.com/maps/search/?api=1&query=Emy+%C3%93tica+Cravinhos" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></span><span><strong>4,8 no Google</strong><span>52 avaliações de clientes</span></span></a>
+    <a class="fato" href="#onde"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><strong>R. Bonfim, 147</strong><span>Centro de Cravinhos</span></span></a>
+    <div class="fato"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/></svg></span><span><strong>Cafezinho e espaço kids</strong><span>Para escolher sem pressa</span></span></div>
+  </div>
+</div>
+
+<div class="promo">
+  <div class="envelope">
+    <p>Comprou seus óculos de grau? Você ganha um óculos de sol.</p>
+    <a class="botao" href="https://wa.me/5516992940561?text=Ol%C3%A1%21%20Vi%20no%20site%20a%20promo%C3%A7%C3%A3o%20do%20%C3%B3culos%20de%20sol%20na%20compra%20do%20%C3%B3culos%20de%20grau.%20Como%20funciona%3F" target="_blank" rel="noopener">Quero saber como funciona</a>
+  </div>
+</div>
+
+<section class="branca" id="oculos">
+  <div class="envelope">
+    <div class="intro" data-revela>
+      <p class="chapeu">O que você encontra</p>
+      <h2>Uma armação para cada rosto, e ajuda para escolher.</h2>
+      <p>Dos modelos clássicos aos mais modernos. A nossa equipe acompanha a escolha da armação e explica a receita e as lentes, sem pressa.</p>
+    </div>
+    <div class="produtos">
+      <article class="cartao grande" data-revela>
+        <div class="foto"><img src="img/grau.jpg" alt="Armação D-Jour de acetato tartaruga" loading="lazy" width="629" height="500"></div>
+        <div class="txt">
+          <h3>Óculos de grau</h3>
+          <p>Traga a sua receita: ajudamos a escolher a armação que combina com o seu rosto e as lentes certas para o seu dia a dia, inclusive fotossensíveis.</p>
+          <a class="pedir" href="https://wa.me/5516992940561?text=Ol%C3%A1%21%20Quero%20fazer%20%C3%B3culos%20de%20grau.%20Tenho%20a%20receita." target="_blank" rel="noopener">Pedir orçamento com a receita →</a>
+        </div>
+      </article>
+      <article class="cartao medio" data-revela>
+        <div class="foto"><img src="img/djour.jpg" alt="Armação dourada D-Jour com estojo" loading="lazy" width="590" height="520"></div>
+        <div class="txt">
+          <h3>Óculos de sol</h3>
+          <p>Coleções com lente polarizada e proteção UV.</p>
+          <a class="pedir" href="https://wa.me/5516992940561?text=Ol%C3%A1%21%20Quero%20ver%20os%20%C3%B3culos%20de%20sol." target="_blank" rel="noopener">Ver modelos →</a>
+        </div>
+      </article>
+      <article class="cartao semfoto" data-revela>
+        <div class="txt">
+          <svg class="lente-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 40c6-16 42-16 48 0"/><path d="M14 38c6-9 30-9 36 0" opacity=".45"/><circle cx="32" cy="26" r="3" fill="currentColor" stroke="none"/></svg>
+          <h3>Lentes de contato</h3>
+          <p>Com a mesma atenção dos óculos: tire as suas dúvidas sobre adaptação, uso e reposição com a nossa equipe.</p>
+          <a class="pedir" href="https://wa.me/5516992940561?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20lentes%20de%20contato." target="_blank" rel="noopener">Perguntar pelo WhatsApp →</a>
+        </div>
+      </article>
+      <article class="cartao semfoto" data-revela>
+        <div class="txt">
+          <svg class="lente-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="18" cy="36" r="10"/><circle cx="46" cy="36" r="10"/><path d="M28 34q4-3 8 0M8 34l-4-6M56 34l4-6"/><path d="m44 14 4 4 8-8" stroke-linecap="round"/></svg>
+          <h3>Ajuste e conserto</h3>
+          <p>Chegou com os óculos quebrados? Ajustamos, trocamos peças e indicamos uma armação nova quando vale mais a pena.</p>
+          <a class="pedir" href="https://wa.me/5516992940561?text=Ol%C3%A1%21%20Meus%20%C3%B3culos%20precisam%20de%20ajuste%20ou%20conserto." target="_blank" rel="noopener">Falar sobre o conserto →</a>
+        </div>
+      </article>
+    </div>
+    <div class="marcas" data-revela><span>Algumas marcas da casa:</span><b>D-Jour</b><b>Vulgatt</b><b>Transitions</b></div>
+  </div>
+</section>
+
+<div class="regua" aria-hidden="true"><span style="font-size:22px">E</span><span style="font-size:18px">M Y</span><span style="font-size:14px">Ó T I</span><span style="font-size:11px">C A</span></div>
+
+<section id="infantil">
+  <div class="envelope kids">
+    <div class="fotos" data-revela>
+      <img src="img/infantil.jpg" alt="Menina experimentando óculos rosa" loading="lazy" width="360" height="520">
+      <img src="img/kids.jpg" alt="Menina de óculos no espaço kids da Emy Ótica" loading="lazy" width="360" height="560">
+    </div>
+    <div data-revela>
+      <p class="chapeu">Óculos infantil</p>
+      <h2>O primeiro óculos pode ser um dia divertido.</h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg><span><b>Espaço kids na loja:</b> a criança brinca enquanto os pais escolhem com calma.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m15 5 4 4L8 20H4v-4L15 5Z"/><path d="m13 7 4 4"/></svg><span><b>Um desenho só dela:</b> quem compra o óculos do pequeno na Emy leva um desenho exclusivo com o retrato da criança, para ela colorir.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="7" cy="14" r="4"/><circle cx="17" cy="14" r="4"/><path d="M11 13.5q1-1 2 0"/></svg><span><b>Armações para criança:</b> leves, resistentes e com personagens que eles adoram.</span></li>
+      </ul>
+      <a class="botao principal" href="https://wa.me/5516992940561?text=Ol%C3%A1%21%20Quero%20ver%20%C3%B3culos%20infantil." target="_blank" rel="noopener">Agendar uma visita com as crianças</a>
+    </div>
+  </div>
+</section>
+
+<section class="branca" id="monte">
+  <div class="envelope">
+    <div class="intro" data-revela>
+      <p class="chapeu">Atendimento</p>
+      <h2>Conte o que você precisa e a gente já te espera.</h2>
+      <p>Escolha as opções abaixo: a mensagem para o nosso WhatsApp sai pronta.</p>
+    </div>
+    <div class="monte" data-revela>
+      <div class="passos">
+        <div class="passo">
+          <h3><i>1</i> Do que você precisa?</h3>
+          <div class="opcoes" data-grupo="o que"></div>
+        </div>
+        <div class="passo">
+          <h3><i>2</i> Você tem receita?</h3>
+          <div class="opcoes" data-grupo="receita"></div>
+        </div>
+        <div class="passo">
+          <h3><i>3</i> Quando prefere passar na loja?</h3>
+          <div class="opcoes" data-grupo="quando"></div>
+        </div>
+        <label class="nome" for="nome">Seu nome <span style="font-weight:500;color:var(--suave)">(opcional)</span></label>
+        <input id="nome" autocomplete="given-name" placeholder="Como podemos te chamar?">
+      </div>
+      <div class="painel">
+        <h3>Sua mensagem</h3>
+        <div class="balao" id="balao" aria-live="polite"></div>
+        <a class="botao" id="enviar" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>Enviar pelo WhatsApp</a>
+        <small>(16) 99294-0561. A mensagem abre no seu WhatsApp e você pode editar antes de enviar.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="avaliacoes">
+  <div class="envelope casa">
+    <div data-revela><img src="img/cafe.jpg" alt="Cantinho do café da Emy Ótica" loading="lazy" width="360" height="430"></div>
+    <div data-revela>
+      <p class="chapeu">Quem já é cliente</p>
+      <h2>Atendimento que faz o cliente voltar.</h2>
+      <div class="nota"><strong>4,8</strong><span><span class="estrelas" aria-hidden="true">★★★★★</span><br><a href="https://www.google.com/maps/search/?api=1&query=Emy+%C3%93tica+Cravinhos" target="_blank" rel="noopener" style="color:var(--suave)">52 avaliações no Google</a></span></div>
+      <div class="depo">
+        <figure><blockquote>“A equipe foi muito atenciosa, ajudando na escolha da armação ideal com muita paciência.”</blockquote><figcaption>Gabriel S., no Google</figcaption></figure>
+        <figure><blockquote>“Já sou cliente há mais de 5 anos e não troco por nada.”</blockquote><figcaption>Pamela N., no Google</figcaption></figure>
+        <figure><blockquote>“Cheguei com meu óculos quebrado e saí com nova armação, resolvendo meu problema.”</blockquote><figcaption>Jean G., no Google</figcaption></figure>
+        <figure><blockquote>“Muito profissionalismo e ótimo cafezinho.”</blockquote><figcaption>Sonia S., no Google</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="branca" id="onde">
+  <div class="envelope">
+    <div class="intro" data-revela>
+      <p class="chapeu">Onde estamos</p>
+      <h2>No centro de Cravinhos, na Rua Bonfim.</h2>
+    </div>
+    <div class="onde">
+      <div class="info" data-revela>
+        <dl>
+          <div><dt>Endereço</dt><dd>R. Bonfim, 147, Centro<br>Cravinhos/SP, 14140-000</dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5516992940561" target="_blank" rel="noopener">(16) 99294-0561</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/emyotica.cravinhos/" target="_blank" rel="noopener">@emyotica.cravinhos</a></dd></div>
+        </dl>
+        <a class="botao principal" href="https://www.google.com/maps/dir/?api=1&destination=Emy+%C3%93tica+R.+Bonfim+147+Cravinhos" target="_blank" rel="noopener" style="align-self:flex-start">Traçar rota</a>
+      </div>
+      <div class="mapa" id="mapa" data-revela>
+        <svg class="pino" viewBox="0 0 24 32" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 0 0-12 12c0 9 12 20 12 20s12-11 12-20A12 12 0 0 0 12 0Zm0 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z"/></svg>
+        <button type="button" id="abrir-mapa"><span>Ver no mapa</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="envelope">
+    <div>
+      <a class="logo" href="#inicio" aria-label="Emy Ótica, voltar ao início"><span class="emy">Emy<svg viewBox="0 0 60 20" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2.6"><rect x="3" y="4" width="22" height="13" rx="5"/><rect x="35" y="4" width="22" height="13" rx="5"/><path d="M25 9q5-4 10 0M3 7 0 5M57 7l3-2"/></g></svg></span><span class="otica">Ótica</span></a>
+      <p style="margin-top:14px">Óculos de grau e de sol, lentes de contato e óculos infantil em Cravinhos.</p>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <p><a href="https://wa.me/5516992940561" target="_blank" rel="noopener">WhatsApp (16) 99294-0561</a></p>
+      <p><a href="https://www.instagram.com/emyotica.cravinhos/" target="_blank" rel="noopener">Instagram @emyotica.cravinhos</a></p>
+    </div>
+    <div>
+      <h4>Endereço</h4>
+      <p>R. Bonfim, 147, Centro</p>
+      <p>Cravinhos/SP</p>
+    </div>
+    <p class="assina">© 2026 Emy Ótica. Site por Ouroborus Technology.</p>
+  </div>
+</footer>
+
+<a class="zap-flutua" id="zap-flutua" href="https://wa.me/5516992940561?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Emy%20%C3%93tica." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+
+<script>
+const ZAP = '5516992940561';
+
+/* menu do celular */
+const botao = document.getElementById('menu-botao'), menu = document.getElementById('menu');
+function fechaMenu(foco){ menu.classList.remove('aberto'); botao.setAttribute('aria-expanded','false'); botao.setAttribute('aria-label','Abrir menu'); if(foco) botao.focus(); }
+botao.addEventListener('click', e => { e.stopPropagation(); const abre = !menu.classList.contains('aberto'); menu.classList.toggle('aberto', abre); botao.setAttribute('aria-expanded', abre); botao.setAttribute('aria-label', abre ? 'Fechar menu' : 'Abrir menu'); });
+menu.addEventListener('click', e => { if (e.target.closest('a')) fechaMenu(); });
+document.addEventListener('click', e => { if (!e.target.closest('.topo')) fechaMenu(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('aberto')) fechaMenu(true); });
+matchMedia('(min-width: 901px)').addEventListener('change', () => fechaMenu());
+
+/* tabela de exame: borrada, nítida dentro dos óculos */
+const LINHAS = [['E',1],['M Y',.62],['Ó T I C A',.4],['V E J A  O',.3],['M E L H O R',.23],['D A  V I D A',.17],['C R A V I N H O S',.12]];
+const tabela = document.getElementById('tabela');
+tabela.querySelectorAll('.linhas').forEach(box => {
+  LINHAS.forEach(([t], i) => { const d = document.createElement('div'); d.innerHTML = `<small>${i+1}</small>` + t.split('').map(c => c === ' ' ? '<span style="width:.45em"></span>' : `<span>${c}</span>`).join(''); box.appendChild(d); });
+});
+const armacao = tabela.querySelector('.armacao');
+function mede(){
+  const h = tabela.querySelector('.linhas').clientHeight;
+  tabela.querySelectorAll('.linhas').forEach(box => [...box.children].forEach((d, i) => d.style.fontSize = Math.max(9, h * .19 * LINHAS[i][1]) + 'px'));
+}
+let alvo = {x:.5, y:.5}, pos = {x:.5, y:.5}, mexeu = false, t0 = performance.now();
+const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function desenha(){
+  const w = tabela.clientWidth, h = tabela.clientHeight, larg = w * .62, r = larg * 40/240, dx = larg * 62/240;
+  const x = pos.x * w, y = pos.y * h;
+  tabela.style.setProperty('--x', x + 'px'); tabela.style.setProperty('--y', y + 'px'); tabela.style.setProperty('--larg', larg + 'px');
+  const ox = 26, oy = 34; /* o box das linhas começa no padding */
+  const m = `radial-gradient(circle ${r}px at ${x-dx-ox}px ${y-oy}px, #000 98%, transparent), radial-gradient(circle ${r}px at ${x+dx-ox}px ${y-oy}px, #000 98%, transparent)`;
+  tabela.style.setProperty('--lente', m);
+}
+function passo(t){
+  if (!mexeu && !quieto){ const s = (t - t0) / 1000; alvo = {x:.5 + Math.sin(s*.7)*.18, y:.42 + Math.sin(s*.45)*.3}; }
+  pos.x += (alvo.x - pos.x) * .14; pos.y += (alvo.y - pos.y) * .14;
+  desenha(); requestAnimationFrame(passo);
+}
+function segue(e){ const b = tabela.getBoundingClientRect(); mexeu = true; alvo = {x:Math.min(.92,Math.max(.08,(e.clientX-b.left)/b.width)), y:Math.min(.95,Math.max(.05,(e.clientY-b.top)/b.height))}; }
+tabela.addEventListener('pointermove', segue);
+tabela.addEventListener('pointerdown', segue);
+tabela.addEventListener('pointerleave', () => { mexeu = false; t0 = performance.now() - 1000; });
+addEventListener('resize', () => { mede(); desenha(); });
+mede(); desenha(); if (!quieto) requestAnimationFrame(passo);
+
+/* monte sua mensagem */
+const OPCOES = {
+  'o que': ['Óculos de grau','Óculos de sol','Lentes de contato','Óculos infantil','Ajuste ou conserto'],
+  'receita': ['Sim, tenho a receita','Ainda não tenho','Não preciso de receita'],
+  'quando': ['De manhã','À tarde','No sábado','Ainda não sei']
+};
+const escolha = {'o que':['Óculos de grau'], 'receita':['Sim, tenho a receita'], 'quando':['À tarde']};
+document.querySelectorAll('.opcoes').forEach(box => {
+  const g = box.dataset.grupo, multi = g === 'o que';
+  OPCOES[g].forEach(op => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = op; b.setAttribute('aria-pressed', escolha[g].includes(op));
+    b.addEventListener('click', () => {
+      if (multi){ const i = escolha[g].indexOf(op); i >= 0 ? (escolha[g].length > 1 && escolha[g].splice(i,1)) : escolha[g].push(op); }
+      else escolha[g] = [op];
+      box.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', escolha[g].includes(x.textContent)));
+      monta();
+    });
+    box.appendChild(b);
+  });
+});
+const nome = document.getElementById('nome');
+nome.addEventListener('input', monta);
+function lista(a){ return a.length > 1 ? a.slice(0,-1).join(', ') + ' e ' + a.at(-1) : a[0]; }
+function monta(){
+  const n = nome.value.trim();
+  let msg = `Olá, Emy Ótica!${n ? ` Aqui é ${n}.` : ''}\nVim pelo site e preciso de: ${lista(escolha['o que']).toLowerCase()}.`;
+  const r = escolha['receita'][0];
+  if (r === 'Sim, tenho a receita') msg += '\nJá tenho a receita e posso mandar uma foto por aqui.';
+  if (r === 'Ainda não tenho') msg += '\nAinda não tenho a receita: podem me orientar?';
+  const q = escolha['quando'][0];
+  msg += q === 'Ainda não sei' ? '\nQual o melhor horário para passar na loja?' : `\nPrefiro passar na loja ${q === 'No sábado' ? 'no sábado' : q.toLowerCase()}.`;
+  document.getElementById('balao').textContent = msg;
+  document.getElementById('enviar').href = `https://wa.me/${ZAP}?text=${encodeURIComponent(msg)}`;
+}
+monta();
+
+/* mapa só no clique */
+document.getElementById('abrir-mapa').addEventListener('click', () => {
+  document.getElementById('mapa').innerHTML = '<iframe title="Mapa da Emy Ótica" src="https://www.google.com/maps?q=R.+Bonfim,+147,+Cravinhos+-+SP&z=17&output=embed" loading="lazy" allowfullscreen></iframe>';
+});
+
+/* zap flutuante: aparece depois da abertura e some no rodapé */
+const zap = document.getElementById('zap-flutua');
+const abertura = document.querySelector('.abertura'), rodape = document.querySelector('.rodape');
+let passouAbertura = false, noRodape = false;
+const att = () => zap.classList.toggle('visivel', passouAbertura && !noRodape);
+new IntersectionObserver(([e]) => { passouAbertura = !e.isIntersecting; att(); }).observe(abertura);
+new IntersectionObserver(([e]) => { noRodape = e.isIntersecting; att(); }).observe(rodape);
+
+/* revela */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('visto'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('[data-revela]').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
