@@ -1040,6 +1040,11 @@
 
   /* cartao do produto: mais ar entre o valor e o botao de adicionar */
   .produto-parcela { margin-bottom: .8rem; }
+
+  /* logo do topo: um pouco maior e mais longe da borda de cima, para os oculinhos respirarem */
+  .topo .marca { padding-top: .75rem; }
+  .topo .marca .emy { font-size: 2.3rem; }
+  .topo .marca .otica { font-size: 1.15rem; }
 </style>
 <script>document.documentElement.classList.add("js");</script>
 <script>
@@ -1341,7 +1346,7 @@ const CATEGORIAS = [
 const MARCAS = [];
 /* cada variacao: nome, foto e preco proprio. Nas armacoes, a variacao e a lente.
    PRECOS DE EXEMPLO: trocar pela tabela e pelo estoque da loja.
-   FOTOS: as da D-Jour e as do infantil sao da propria Emy; as outras sao ilustrativas (Wikimedia Commons, creditos no rodape) */
+   FOTOS: as da D-Jour e a do infantil transparente sao da propria Emy; as outras sao ilustrativas (Wikimedia Commons, creditos no rodape) */
 const v = (n, f, extra = {}) => ({ n, f, ...extra });
 const lentes = (f, base) => [v("Só a armação", f, { preco: base }), v("Visão simples", f, { preco: base + 290 }), v("Transitions", f, { preco: base + 690 }), v("Multifocal", f, { preco: base + 890 })];
 const lentesKids = (f, base) => [v("Só a armação", f, { preco: base }), v("Visão simples", f, { preco: base + 260 })];
@@ -1363,7 +1368,7 @@ const PRODUTOS = [
   { id: "sol-esportivo", cat: "sol", marca: "Sol", nome: "Óculos de Sol Esportivo Espelhado", desc: "Para corrida, ciclismo e pedal: lente envolvente e espelhada, leve, com proteção UV400.", selo: "Novidade", preco: 259.90,
     vars: [v("", "sol-esportivo")], ficha: [["Proteção", "UV400"], ["Uso", "Esporte"]] },
   { id: "infantil-rosa", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Rosa Flexível", desc: "Armação flexível e resistente, na medida do rosto da criança, em rosa.", ini: "Só a armação", rotulo: "Lentes", preco: 229.90,
-    vars: lentesKids("infantil-rosa", 229.90), ficha: [["Material", "Flexível"], ["Idade", "A partir de 4 anos"]] },
+    vars: lentesKids("infantil-rosa-2", 229.90), ficha: [["Material", "Flexível"], ["Idade", "A partir de 4 anos"]] },
   { id: "infantil-kids", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Transparente", desc: "Armação leve e transparente, que a criança esquece que está usando.", ini: "Só a armação", rotulo: "Lentes", preco: 249.90,
     vars: lentesKids("infantil-kids", 249.90), ficha: [["Material", "Acetato leve"], ["Idade", "A partir de 6 anos"]] },
   { id: "contato-mensal", cat: "contato", marca: "Lentes de contato", nome: "Lentes de Contato Mensais", desc: "Lentes gelatinosas de uso mensal. Depois da compra, informe o grau de cada olho pelo WhatsApp.", ini: "6 lentes", rotulo: "Caixa", preco: 189.90,
