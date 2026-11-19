@@ -934,7 +934,7 @@
   .regua-faixa { display: none; }
 
   /* a marca: o nome Emy com os oculinhos, como no site da ótica */
-  .marca, .rodape-marca, .loja-marca { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; }
+  .marca, .rodape-marca, .loja-marca { display: inline-flex; align-items: baseline; gap: 8px; text-decoration: none; }
   .marca .emy, .rodape-marca .emy, .loja-marca .emy { position: relative; font: 800 2rem/1 var(--fonte); letter-spacing: -.04em; color: var(--azul); }
   .marca .emy svg, .rodape-marca .emy svg, .loja-marca .emy svg { position: absolute; left: .9em; top: -.2em; width: 1.2em; height: auto; color: var(--tinta); }
   .marca .otica, .rodape-marca .otica, .loja-marca .otica { font: 800 1.05rem/1 var(--fonte); color: var(--tinta); }
@@ -955,7 +955,7 @@
   /* categorias e cabeceira da fileira: fotos de verdade, recortadas no quadro */
   .categoria img { object-fit: cover; padding: 0; filter: none; }
   .categoria-todos span:first-child { background-color: var(--azul-claro); }
-  .fim-parede { gap: 10px; padding: 1.2rem 1rem .4rem; }
+  .fim-parede { gap: 12px; padding: 1.2rem 1rem .4rem; }
   .fim-parede img { height: clamp(6.5rem, 8vw, 9rem); width: auto; aspect-ratio: 1; object-fit: cover; border-radius: 12px; filter: none; }
   .produto-foto img { object-fit: cover; }
   /* preco e numeros em Manrope: os algarismos da serifa parecem letras (489,9o) */
@@ -1045,6 +1045,19 @@
   .topo .marca { padding-top: .75rem; }
   .topo .marca .emy { font-size: 2.3rem; }
   .topo .marca .otica { font-size: 1.15rem; }
+
+  /* celular estreito: a logo volta um pouco, para o menu caber na mesma linha */
+  @media (max-width: 380px) {
+    .topo .marca { padding-top: .6rem; }
+    .topo .marca .emy { font-size: 1.85rem; }
+    .topo .marca .otica { font-size: .95rem; }
+  }
+  /* tablet: a foto do banner comeca mais a direita e o texto fica mais estreito, sem passar por cima dela */
+  @media (min-width: 761px) and (max-width: 1100px) {
+    .destaque-escuro .destaque-foto { inset: 0 0 0 44%; }
+    .destaque-texto { max-width: calc(5.4rem + 22rem); }
+    .destaque h2 { font-size: clamp(2rem, 4.2vw, 2.8rem); }
+  }
 </style>
 <script>document.documentElement.classList.add("js");</script>
 <script>
@@ -1567,6 +1580,10 @@ const urlProduto = (p, k, l) => `?produto=${p.id}${p.vars.length > 1 ? `&opcao=$
 const opcaoDaUrl = (p, q) => { const k = p.vars.findIndex((va) => va.n === q.get("opcao")); return k >= 0 ? k : undefined; };
 const ladoDaUrl = (q) => (q.get("manivela") === "esquerda" ? "Esquerda" : "Direita");
 const nomeCat = (id) => CATEGORIAS.find((c) => c[0] === id)[1];
+/* "Sol", "Infantil", "Metal"... sao rotulos, nao marcas: no nome completo so entra marca de verdade (D-Jour) */
+const ROTULOS = ["Sol", "Infantil", "Lentes de contato", "Acetato", "Metal"];
+const marcaReal = (p) => !ROTULOS.includes(p.marca);
+const nomeTodo = (p) => (marcaReal(p) ? `${p.marca} ${p.nome}` : p.nome);
 const maiusc = (t) => t[0].toUpperCase() + t.slice(1);
 /* uma linha de orientacao por categoria, no acordeao */
 const DICA = {
@@ -1595,7 +1612,7 @@ function escolhaPagina(p) {
 function desenharProduto() {
   const p = ppP, sem = p.vars.filter((va) => !tem(va)).length;
   const mais = [...PRODUTOS.filter((o) => o.cat === p.cat && o.id !== p.id), ...PRODUTOS.filter((o) => o.cat !== p.cat && o.marca === p.marca)].slice(0, 12);
-  const detalhes = [["Marca", p.marca], ["Categoria", nomeCat(p.cat)],
+  const detalhes = [marcaReal(p) && ["Marca", p.marca], ["Categoria", nomeCat(p.cat)],
     p.vars.length > 1 && [maiusc(PLURAL[p.rotulo]), `${p.vars.length - sem} disponíveis${sem ? ` (${sem} sem estoque no momento)` : ""}`],
     p.lados && ["Manivela", "Direita ou esquerda"], ...(p.ficha || [])].filter(Boolean);
   pp.innerHTML = `
@@ -1631,7 +1648,7 @@ function desenharProduto() {
             <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h16v13H3zM19 13h5l4 5v4h-9"/><circle cx="8" cy="24" r="2.5"/><circle cx="23" cy="24" r="2.5"/></svg><span><strong>Receba em casa</strong>Óculos de grau saem depois da montagem das lentes</span></li>
             
           </ul>
-          <a class="pp-zap" href="${zap(`Olá! Vim pelo site e tenho uma dúvida sobre ${p.marca} ${p.nome}.`)}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Dúvidas sobre este produto? Fale conosco</a>
+          <a class="pp-zap" href="${zap(`Olá! Vim pelo site e tenho uma dúvida sobre ${nomeTodo(p)}.`)}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Dúvidas sobre este produto? Fale conosco</a>
         </section>
       </div>
     </div>
@@ -1674,7 +1691,7 @@ addEventListener("scroll", barraCompra, { passive: true });
 /* trocar a cor ou o tamanho troca a foto, o preco e o endereco */
 function mostrarOpcao() {
   const p = ppP, va = p.vars[ppK], img = $("#pp-img"), preco = precoDe(p, va);
-  img.src = fotoP(va.f); img.alt = `${p.marca} ${p.nome}${va.n ? `, ${p.rotulo.toLowerCase()} ${va.n}` : ""}`;
+  img.src = fotoP(va.f); img.alt = `${nomeTodo(p)}${va.n ? `, ${p.rotulo.toLowerCase()} ${va.n}` : ""}`;
   $("#pp-preco").textContent = reais(preco);
   $("#pp-barra-preco").textContent = reais(preco);
   { const n = parcelasMax(preco); $("#pp-parcela").textContent = n > 1 ? `à vista no Pix ou em até ${n}x de ${reais(preco / n)} sem juros no cartão` : "à vista no Pix ou no cartão"; }
@@ -1702,7 +1719,7 @@ function abrirProduto(id, k, empurrar = true, l = "Direita") {
   ppP = p; ppK = k ?? varInicial(p); ppL = l; ppQtd = 1;
   desenharProduto();
   modoProduto(true);
-  document.title = `${p.marca} ${p.nome} | Emy Ótica`;
+  document.title = `${nomeTodo(p)} | Emy Ótica`;
   scrollTo({ top: 0, behavior: "instant" });
   $("#pp-titulo").focus({ preventScroll: true });
 }
@@ -1876,7 +1893,7 @@ function desenharSacola(focar) {
     <ul class="itens">${itens.map((i, k) => { const p = produtoDe(i), va = varDe(i), d = detalhe(p, va, i.l); return `
       <li class="item">
         <img src="${fotoP(va.f)}" width="68" height="68" alt="">
-        <h3>${esc(p.marca)} ${esc(p.nome)}</h3>
+        <h3>${esc(nomeTodo(p))}</h3>
         ${d ? `<p class="item-var">${esc(d)}</p>` : ""}
         <div class="item-linha">
           <div class="qtd"><button type="button" data-acao="menos" data-i="${k}" aria-label="Diminuir quantidade">−</button><output aria-live="polite">${i.qtd}</output><button type="button" data-acao="mais" data-i="${k}" aria-label="Aumentar quantidade">+</button></div>
@@ -2031,7 +2048,7 @@ function desenharAprovado() {
 
 function textoPedido(pago) {
   const linhas = [pago ? `Olá! Fiz o pedido ${pedido.numero} pelo site:` : "Olá! Gostaria de fazer um pedido pelo site:"];
-  itens.forEach((i) => { const p = produtoDe(i), d = detalhe(p, varDe(i), i.l); linhas.push(`- ${i.qtd}x ${p.marca} ${p.nome}${d ? ` (${d})` : ""}: ${reais(precoItem(i) * i.qtd)}`); });
+  itens.forEach((i) => { const p = produtoDe(i), d = detalhe(p, varDe(i), i.l); linhas.push(`- ${i.qtd}x ${nomeTodo(p)}${d ? ` (${d})` : ""}: ${reais(precoItem(i) * i.qtd)}`); });
   linhas.push(`Subtotal: ${reais(totalSacola())}`);
   const fr = freteSacola(); if (fr) linhas.push(`Frete: ${reais(fr.valor)} (${fr.prazo} dias úteis)`, `Total: ${reais(totalPedido())}`);
   if (comEndereco()) {
@@ -2127,12 +2144,12 @@ $("#orcamento").addEventListener("input", (e) => {
 $("#atalhos").addEventListener("click", (e) => {
   const b = e.target.closest("[data-item]"); if (!b) return;
   const atual = campoItens.value.replace(/\s+$/, "");
-  campoItens.value = `${atual ? atual + "\n" : ""}1 ${b.dataset.item.toLowerCase()} `;
+  campoItens.value = `${atual ? atual + "\n" : ""}${b.dataset.item}`;
   lista.itens = campoItens.value;
   desenharLista();
   piscar($("#lista-previa"));
-  /* o cursor fica no fim, para completar a medida ou a quantidade */
-  campoItens.focus(); campoItens.setSelectionRange(campoItens.value.length, campoItens.value.length);
+  /* no computador o cursor fica no fim para completar; no celular nao abre o teclado por cima das opcoes */
+  if (matchMedia("(pointer: fine)").matches) { campoItens.focus(); campoItens.setSelectionRange(campoItens.value.length, campoItens.value.length); }
 });
 $("#lista-enviar").addEventListener("click", (e) => {
   if (linhasLista().length) return;
