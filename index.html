@@ -1037,6 +1037,9 @@
   @media (max-width: 760px) {
     .destaque-escuro .destaque-foto { aspect-ratio: 16 / 11; }
   }
+
+  /* cartao do produto: mais ar entre o valor e o botao de adicionar */
+  .produto-parcela { margin-bottom: .8rem; }
 </style>
 <script>document.documentElement.classList.add("js");</script>
 <script>
@@ -1307,7 +1310,7 @@
       </ul>
     </div>
   </div>
-  <div class="envoltorio rodape-fim"><p>© 2026 Emy Ótica, Cravinhos (SP).</p><p class="creditos">Fotos do banner: Unsplash. Fotos ilustrativas de produtos: <a href="https://commons.wikimedia.org/wiki/File:Glasses_black.jpg" target="_blank" rel="noopener">عدنان حليم</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_(AM_71518-7).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_and_case_(AM_71512-10).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai,_Thailand,_Sunglasses.jpg" target="_blank" rel="noopener">Vyacheslav Argenberg</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Sunglasses_in_Mexico.jpg" target="_blank" rel="noopener">BORNTHISWAYMEDIA</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Corrective_soft_contact_lenses,_with_high_oxigen_permeability.jpg" target="_blank" rel="noopener">Albarubescens</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Contact_lens_1.jpg" target="_blank" rel="noopener">Bryan Tong Minh</a> (CC BY 2.5), <a href="https://commons.wikimedia.org/wiki/File:Women%27s_sunglasses_VERSACE_Violet_Gradient_(Creative_Commons).jpg" target="_blank" rel="noopener">Ossa Kolo</a> (CC BY 2.0), via Wikimedia Commons.</p></div>
+  <div class="envoltorio rodape-fim"><p>© 2026 Emy Ótica, Cravinhos (SP).</p><p class="creditos">Fotos do banner e dos produtos de exemplo: Unsplash. Fotos ilustrativas de produtos: <a href="https://commons.wikimedia.org/wiki/File:Glasses_black.jpg" target="_blank" rel="noopener">عدنان حليم</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_(AM_71518-7).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_and_case_(AM_71512-10).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai,_Thailand,_Sunglasses.jpg" target="_blank" rel="noopener">Vyacheslav Argenberg</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Sunglasses_in_Mexico.jpg" target="_blank" rel="noopener">BORNTHISWAYMEDIA</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Corrective_soft_contact_lenses,_with_high_oxigen_permeability.jpg" target="_blank" rel="noopener">Albarubescens</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Contact_lens_1.jpg" target="_blank" rel="noopener">Bryan Tong Minh</a> (CC BY 2.5), <a href="https://commons.wikimedia.org/wiki/File:Women%27s_sunglasses_VERSACE_Violet_Gradient_(Creative_Commons).jpg" target="_blank" rel="noopener">Ossa Kolo</a> (CC BY 2.0), via Wikimedia Commons.</p></div>
 </footer>
 
 <a class="flutuante" id="flutuante" href="#" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" title="Conversar no WhatsApp" tabindex="-1">
@@ -1369,14 +1372,14 @@ const PRODUTOS = [
   { id: "contato-diaria", cat: "contato", marca: "Lentes de contato", nome: "Lentes de Contato Diárias", desc: "Uma lente nova por dia, sem estojo nem solução. Informe o grau pelo WhatsApp.", ini: "30 lentes", rotulo: "Caixa", preco: 159.90,
     vars: [v("30 lentes", "contato-diaria", { preco: 159.90 }), v("90 lentes", "contato-diaria", { preco: 429.90 })], ficha: [["Uso", "Diário"], ["Grau", "Informado pelo WhatsApp"]] },
   /* PRODUTOS EXEMPLO: so para a fileira nao ficar vazia na demonstracao; trocar pelos modelos da loja */
-  { id: "ex-sol-aviador", cat: "sol", marca: "Sol", nome: "Óculos de Sol Aviador", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 279.90, vars: [v("", "exemplo")] },
-  { id: "ex-sol-quadrado", cat: "sol", marca: "Sol", nome: "Óculos de Sol Quadrado", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 319.90, vars: [v("", "exemplo")] },
-  { id: "ex-inf-azul", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Azul", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 219.90, vars: [v("", "exemplo")] },
-  { id: "ex-inf-redonda", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Redonda", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 239.90, vars: [v("", "exemplo")] },
-  { id: "ex-inf-sol", cat: "infantil", marca: "Infantil", nome: "Óculos de Sol Infantil", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 149.90, vars: [v("", "exemplo")] },
-  { id: "ex-lc-colorida", cat: "contato", marca: "Lentes de contato", nome: "Lentes de Contato Coloridas", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 169.90, vars: [v("", "exemplo")] },
-  { id: "ex-lc-solucao", cat: "contato", marca: "Lentes de contato", nome: "Solução Multiuso 360 ml", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 49.90, vars: [v("", "exemplo")] },
-  { id: "ex-lc-estojo", cat: "contato", marca: "Lentes de contato", nome: "Estojo para Lentes", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 19.90, vars: [v("", "exemplo")] },
+  { id: "ex-sol-aviador", cat: "sol", marca: "Sol", nome: "Óculos de Sol Aviador Rosé", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 279.90, vars: [v("", "ex-sol-aviador")] },
+  { id: "ex-sol-quadrado", cat: "sol", marca: "Sol", nome: "Óculos de Sol Quadrado Verde", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 319.90, vars: [v("", "ex-sol-quadrado")] },
+  { id: "ex-inf-azul", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Preta Flexível", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 219.90, vars: [v("", "ex-inf-azul")] },
+  { id: "ex-inf-redonda", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Redonda Preta", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 239.90, vars: [v("", "ex-inf-redonda")] },
+  { id: "ex-inf-sol", cat: "infantil", marca: "Infantil", nome: "Óculos de Sol Infantil Amarelo", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 149.90, vars: [v("", "ex-inf-sol")] },
+  { id: "ex-lc-colorida", cat: "contato", marca: "Lentes de contato", nome: "Lentes de Contato Coloridas", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 169.90, vars: [v("", "ex-lc-colorida")] },
+  { id: "ex-lc-solucao", cat: "contato", marca: "Lentes de contato", nome: "Solução Multiuso 360 ml", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 49.90, vars: [v("", "ex-lc-solucao")] },
+  { id: "ex-lc-estojo", cat: "contato", marca: "Lentes de contato", nome: "Estojo para Lentes", desc: "Produto exemplo, com foto ilustrativa. Aqui entram a foto e a descrição do modelo da loja.", preco: 19.90, vars: [v("", "ex-lc-estojo")] },
 ];
 
 const $ = (s, el = document) => el.querySelector(s);
