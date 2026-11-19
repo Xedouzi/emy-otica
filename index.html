@@ -1014,6 +1014,29 @@
   .rodape-fim { margin-top: clamp(1.4rem, 3vw, 2rem); padding-block: .9rem calc(.9rem + env(safe-area-inset-bottom)); }
   .rodape-fim .creditos { margin-top: .3rem; font-size: .74rem; opacity: .7; }
   :root { --veu-cat: rgba(25, 20, 21, .78); --ceu-banner: #DCEFF7; }
+
+  /* ---------- banner de ponta a ponta (19/11) ----------
+     a faixa ocupa a largura toda da tela; a foto entra pela direita e se desfaz
+     no escuro, e o texto fica alinhado com o resto da página */
+  .destaques-secao .envoltorio.abertura { max-width: none; padding-inline: 0; }
+  .destaques-trilho { border-radius: 0; }
+  .destaque-foto img[src*="armacoes"] { object-position: 70% 50%; }
+  .destaque-foto img[src*="sol"] { object-position: 50% 62%; }
+  .destaque-foto img[src*="infantil"] { object-position: 50% 30%; }
+  .destaque-foto img[src*="loja"] { object-position: 50% 40%; }
+  @media (min-width: 761px) {
+    .destaque { display: block; min-height: clamp(460px, 34vw, 620px); }
+    .destaque-escuro .destaque-foto { position: absolute; inset: 0 0 0 30%; }
+    .destaque-escuro .destaque-foto img { -webkit-mask-image: linear-gradient(90deg, transparent, var(--mascara) 38%); mask-image: linear-gradient(90deg, transparent, var(--mascara) 38%); }
+    .destaque-texto { min-height: inherit; max-width: calc(max(5.4rem, (100% - var(--largura)) / 2 + var(--margem)) + 34rem); padding-left: max(5.4rem, calc((100% - var(--largura)) / 2 + var(--margem))); padding-right: 1rem; }
+    .destaque h2 { max-width: 11em; }
+    .destaques .seta-ant { left: max(.9rem, calc((100% - var(--largura)) / 2 - 1.5rem)); }
+    .destaques .seta-prox { right: max(.9rem, calc((100% - var(--largura)) / 2 - 1.5rem)); }
+    .destaques .pontos { bottom: 1rem; }
+  }
+  @media (max-width: 760px) {
+    .destaque-escuro .destaque-foto { aspect-ratio: 16 / 11; }
+  }
 </style>
 <script>document.documentElement.classList.add("js");</script>
 <script>
@@ -1092,7 +1115,7 @@
             <span class="etiqueta"><span>a partir de <b>R$ 489,90</b></span></span>
             <button class="btn btn-branco" type="button" data-ir="grau">Ver os óculos de grau</button>
           </div>
-          <div class="destaque-foto"><img src="img/grau.jpg" width="629" height="500" alt="Armação D-Jour de acetato tartaruga" fetchpriority="high"></div>
+          <div class="destaque-foto"><img src="img/banner/armacoes.jpg" width="1920" height="900" alt="Parede de armações coloridas numa ótica" fetchpriority="high"></div>
         </li>
         <li class="destaque destaque-escuro" aria-roledescription="destaque" aria-label="2 de 4">
           <div class="destaque-texto">
@@ -1100,7 +1123,7 @@
             <p>Na compra dos óculos de grau completos, armação e lentes, você leva um óculos de sol de presente.</p>
             <button class="btn btn-branco" type="button" data-ir="sol">Ver os óculos de sol</button>
           </div>
-          <div class="destaque-foto"><img src="img/fotos/photo-f137149884.jpg" width="1280" height="962" alt="Óculos de sol com lente espelhada azul" loading="lazy"></div>
+          <div class="destaque-foto"><img src="img/banner/sol.jpg" width="1920" height="900" alt="Óculos de sol sobre a mesa, com o mar ao fundo" loading="lazy"></div>
         </li>
         <li class="destaque destaque-escuro" aria-roledescription="destaque" aria-label="3 de 4">
           <div class="destaque-texto">
@@ -1108,7 +1131,7 @@
             <p>Armações leves e resistentes, espaço kids na loja e um desenho com o retrato da criança para ela colorir.</p>
             <button class="btn btn-branco" type="button" data-ir="infantil">Ver os infantis</button>
           </div>
-          <div class="destaque-foto"><img src="img/kids.jpg" width="360" height="560" alt="Menina de óculos no espaço kids da Emy Ótica" loading="lazy"></div>
+          <div class="destaque-foto"><img src="img/banner/infantil.jpg" width="1920" height="900" alt="Menina sorrindo com óculos de armação rosa" loading="lazy"></div>
         </li>
         <li class="destaque destaque-escuro" aria-roledescription="destaque" aria-label="4 de 4">
           <div class="destaque-texto">
@@ -1116,7 +1139,7 @@
             <p>Escolha a armação aqui, mande a foto da receita pelo WhatsApp e retire na loja, ou receba em casa.</p>
             <a class="btn btn-branco" href="#chegar">Como chegar na loja</a>
           </div>
-          <div class="destaque-foto"><img src="img/cafe.jpg" width="360" height="430" alt="Cantinho do café da Emy Ótica" loading="lazy"></div>
+          <div class="destaque-foto"><img src="img/banner/loja.jpg" width="1920" height="900" alt="Cliente escolhendo armação diante da parede de óculos" loading="lazy"></div>
         </li>
       </ul>
       <button class="seta seta-ant" type="button" id="destaque-ant" aria-label="Destaque anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -1284,7 +1307,7 @@
       </ul>
     </div>
   </div>
-  <div class="envoltorio rodape-fim"><p>© 2026 Emy Ótica, Cravinhos (SP).</p><p class="creditos">Fotos ilustrativas de produtos: <a href="https://commons.wikimedia.org/wiki/File:Glasses_black.jpg" target="_blank" rel="noopener">عدنان حليم</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_(AM_71518-7).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_and_case_(AM_71512-10).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai,_Thailand,_Sunglasses.jpg" target="_blank" rel="noopener">Vyacheslav Argenberg</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Sunglasses_in_Mexico.jpg" target="_blank" rel="noopener">BORNTHISWAYMEDIA</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Corrective_soft_contact_lenses,_with_high_oxigen_permeability.jpg" target="_blank" rel="noopener">Albarubescens</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Contact_lens_1.jpg" target="_blank" rel="noopener">Bryan Tong Minh</a> (CC BY 2.5), <a href="https://commons.wikimedia.org/wiki/File:Women%27s_sunglasses_VERSACE_Violet_Gradient_(Creative_Commons).jpg" target="_blank" rel="noopener">Ossa Kolo</a> (CC BY 2.0), via Wikimedia Commons.</p></div>
+  <div class="envoltorio rodape-fim"><p>© 2026 Emy Ótica, Cravinhos (SP).</p><p class="creditos">Fotos do banner: Unsplash. Fotos ilustrativas de produtos: <a href="https://commons.wikimedia.org/wiki/File:Glasses_black.jpg" target="_blank" rel="noopener">عدنان حليم</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_(AM_71518-7).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_and_case_(AM_71512-10).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai,_Thailand,_Sunglasses.jpg" target="_blank" rel="noopener">Vyacheslav Argenberg</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Sunglasses_in_Mexico.jpg" target="_blank" rel="noopener">BORNTHISWAYMEDIA</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Corrective_soft_contact_lenses,_with_high_oxigen_permeability.jpg" target="_blank" rel="noopener">Albarubescens</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Contact_lens_1.jpg" target="_blank" rel="noopener">Bryan Tong Minh</a> (CC BY 2.5), <a href="https://commons.wikimedia.org/wiki/File:Women%27s_sunglasses_VERSACE_Violet_Gradient_(Creative_Commons).jpg" target="_blank" rel="noopener">Ossa Kolo</a> (CC BY 2.0), via Wikimedia Commons.</p></div>
 </footer>
 
 <a class="flutuante" id="flutuante" href="#" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" title="Conversar no WhatsApp" tabindex="-1">
