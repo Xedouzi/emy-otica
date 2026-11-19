@@ -960,6 +960,60 @@
   .produto-foto img { object-fit: cover; }
   /* preco e numeros em Manrope: os algarismos da serifa parecem letras (489,9o) */
   .produto-preco, .pp-preco strong, .pp-barra strong, .etiqueta b, .google-numero, .loja-numeros b, .sacola strong, .total { font-family: var(--fonte) !important; font-weight: 800 !important; letter-spacing: -.02em; }
+
+  /* ---------- rodada 2 (19/11) ---------- */
+  /* categorias: a foto ocupa o cartao todo e o nome fica por cima */
+  .categorias { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+  .categoria { position: relative; display: block; aspect-ratio: 5 / 4; overflow: hidden; border-radius: 18px; background: var(--nevoa); transition: transform .2s var(--ease-out), box-shadow .2s ease; }
+  .categoria span:first-child { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; background: var(--nevoa); }
+  .categoria img { width: 100%; height: 100%; object-fit: cover; }
+  .categoria span:last-child, .categoria[aria-pressed="true"] span:last-child { position: absolute; left: 0; right: 0; bottom: 0; min-height: 0; padding: 2.6rem 1rem .9rem; border: 0; background: linear-gradient(180deg, transparent, var(--veu-cat)); color: var(--branco); font: 400 1.3rem/1.1 var(--fonte-titulo); }
+  .categoria-todos span:first-child { display: grid; place-items: center; background: var(--azul); }
+  .categoria-todos svg { width: 30%; height: 30%; stroke: var(--branco); margin-top: -1.6rem; }
+  .categoria-todos span:last-child { background: none; }
+  .categoria::after { border-radius: inherit; }
+  .categoria[aria-pressed="true"]::after { box-shadow: inset 0 0 0 3px var(--azul), inset 0 0 0 5px var(--branco); }
+  @media (hover: hover) and (pointer: fine) { .categoria:hover { transform: translateY(-3px); box-shadow: 0 14px 24px -16px var(--sombra-azul-55); } .categoria:hover::after { box-shadow: none; } .categoria[aria-pressed="true"]:hover::after { box-shadow: inset 0 0 0 3px var(--azul), inset 0 0 0 5px var(--branco); } }
+  @media (prefers-reduced-motion: reduce) { .categoria, .categoria:hover { transition: none; transform: none; } }
+  @media (max-width: 860px) { .categoria { flex: 0 0 150px; } .categoria span:last-child { font-size: 1.1rem; padding: 2rem .8rem .7rem; } }
+
+  /* banners do meio da vitrine: texto no branco, produto numa faixa de cor */
+  .vitrine-banners { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+  .banner-meio { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); min-height: 250px; overflow: hidden; border-radius: var(--raio); background: var(--branco); box-shadow: 0 0 0 1px var(--linha); }
+  .banner-texto { display: grid; align-content: center; justify-items: start; gap: .7rem; padding: clamp(1.4rem, 3vw, 2.2rem); }
+  .banner-texto h3 { font-size: clamp(1.45rem, 1.1rem + 1vw, 1.9rem); line-height: 1.1; }
+  .banner-texto p { color: var(--tinta-2); font-size: .98rem; line-height: 1.5; }
+  .banner-texto .btn { margin-top: .3rem; min-height: 46px; }
+  .banner-foto { display: grid; place-items: center; overflow: hidden; }
+  .banner-foto img { width: 118%; max-width: none; height: auto; mix-blend-mode: multiply; }
+  .banner-rosa { background: var(--azul-claro); }
+  .banner-ceu { background: var(--ceu-banner); }
+  @media (max-width: 1000px) { .vitrine-banners { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 520px) { .banner-meio { grid-template-columns: minmax(0, 1fr); } .banner-foto { order: -1; aspect-ratio: 16 / 9; } .banner-foto img { width: 80%; } }
+
+  /* "sua mensagem" ocupa a altura toda do bloco no computador */
+  @media (min-width: 901px) {
+    .orcamento-grade { align-items: stretch; }
+    .lista-cartao { position: relative; top: auto; align-self: stretch; grid-template-rows: auto minmax(8rem, 1fr) auto auto auto; }
+    .lista-cartao .previa { max-height: none; }
+  }
+
+  /* avaliacoes: a nota num cartao centrado, as falas com aspas grandes */
+  .google { align-items: stretch; }
+  .google-nota { justify-items: center; align-content: center; text-align: center; gap: .6rem; padding: 2rem 1.5rem; background: var(--branco); box-shadow: 0 0 0 1px var(--linha); }
+  .google-numero { font-size: 5rem; }
+  .google-nota .estrelas { font-size: 1.5rem; }
+  .depoimentos li { position: relative; padding: 1.5rem 1.6rem 1.6rem; }
+  .depoimentos blockquote { font: 400 1.12rem/1.5 var(--fonte-titulo); color: var(--tinta); }
+  @media (max-width: 1100px) { .google-nota { grid-template-columns: minmax(0, 1fr); justify-items: center; } }
+
+  /* rodape mais curto */
+  .rodape { padding-top: clamp(2rem, 4vw, 2.8rem); }
+  .rodape-grade { grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); gap: 1.5rem clamp(1.5rem, 4vw, 3rem); }
+  .rodape-coluna { gap: .5rem; }
+  .rodape-fim { margin-top: clamp(1.4rem, 3vw, 2rem); padding-block: .9rem calc(.9rem + env(safe-area-inset-bottom)); }
+  .rodape-fim .creditos { margin-top: .3rem; font-size: .74rem; opacity: .7; }
+  :root { --veu-cat: rgba(25, 20, 21, .78); --ceu-banner: #DCEFF7; }
 </style>
 <script>document.documentElement.classList.add("js");</script>
 <script>
@@ -1229,16 +1283,8 @@
         <li><a href="#chegar">Como chegar</a></li>
       </ul>
     </div>
-    <div class="rodape-coluna">
-      <h2>Pagamento e entrega</h2>
-      <ul>
-        <li>Pix ou cartão em até 10x sem juros</li>
-        <li>Retirada na loja sem frete</li>
-        <li>Óculos de grau enviados depois da montagem</li>
-      </ul>
-    </div>
   </div>
-  <div class="envoltorio rodape-fim"><p>Emy Ótica, Cravinhos (SP). Site por Ouroborus Technology.</p><p class="creditos">Fotos ilustrativas de produtos: <a href="https://commons.wikimedia.org/wiki/File:Glasses_black.jpg" target="_blank" rel="noopener">عدنان حليم</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_(AM_71518-7).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_and_case_(AM_71512-10).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai,_Thailand,_Sunglasses.jpg" target="_blank" rel="noopener">Vyacheslav Argenberg</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Sunglasses_in_Mexico.jpg" target="_blank" rel="noopener">BORNTHISWAYMEDIA</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Corrective_soft_contact_lenses,_with_high_oxigen_permeability.jpg" target="_blank" rel="noopener">Albarubescens</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Contact_lens_1.jpg" target="_blank" rel="noopener">Bryan Tong Minh</a> (CC BY 2.5), <a href="https://commons.wikimedia.org/wiki/File:Women%27s_sunglasses_VERSACE_Violet_Gradient_(Creative_Commons).jpg" target="_blank" rel="noopener">Ossa Kolo</a> (CC BY 2.0), via Wikimedia Commons.</p></div>
+  <div class="envoltorio rodape-fim"><p>© 2026 Emy Ótica, Cravinhos (SP).</p><p class="creditos">Fotos ilustrativas de produtos: <a href="https://commons.wikimedia.org/wiki/File:Glasses_black.jpg" target="_blank" rel="noopener">عدنان حليم</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_(AM_71518-7).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Eyeglasses_and_case_(AM_71512-10).jpg" target="_blank" rel="noopener">Unknown author</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai,_Thailand,_Sunglasses.jpg" target="_blank" rel="noopener">Vyacheslav Argenberg</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Sunglasses_in_Mexico.jpg" target="_blank" rel="noopener">BORNTHISWAYMEDIA</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Corrective_soft_contact_lenses,_with_high_oxigen_permeability.jpg" target="_blank" rel="noopener">Albarubescens</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Contact_lens_1.jpg" target="_blank" rel="noopener">Bryan Tong Minh</a> (CC BY 2.5), <a href="https://commons.wikimedia.org/wiki/File:Women%27s_sunglasses_VERSACE_Violet_Gradient_(Creative_Commons).jpg" target="_blank" rel="noopener">Ossa Kolo</a> (CC BY 2.0), via Wikimedia Commons.</p></div>
 </footer>
 
 <a class="flutuante" id="flutuante" href="#" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" title="Conversar no WhatsApp" tabindex="-1">
@@ -1299,6 +1345,15 @@ const PRODUTOS = [
     vars: [v("6 lentes", "contato-mensal", { preco: 189.90 }), v("12 lentes", "contato-mensal", { preco: 359.90 })], ficha: [["Uso", "Mensal"], ["Grau", "Informado pelo WhatsApp"]] },
   { id: "contato-diaria", cat: "contato", marca: "Lentes de contato", nome: "Lentes de Contato Diárias", desc: "Uma lente nova por dia, sem estojo nem solução. Informe o grau pelo WhatsApp.", ini: "30 lentes", rotulo: "Caixa", preco: 159.90,
     vars: [v("30 lentes", "contato-diaria", { preco: 159.90 }), v("90 lentes", "contato-diaria", { preco: 429.90 })], ficha: [["Uso", "Diário"], ["Grau", "Informado pelo WhatsApp"]] },
+  /* PRODUTOS EXEMPLO: so para a fileira nao ficar vazia na demonstracao; trocar pelos modelos da loja */
+  { id: "ex-sol-aviador", cat: "sol", marca: "Sol", nome: "Óculos de Sol Aviador", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 279.90, vars: [v("", "exemplo")] },
+  { id: "ex-sol-quadrado", cat: "sol", marca: "Sol", nome: "Óculos de Sol Quadrado", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 319.90, vars: [v("", "exemplo")] },
+  { id: "ex-inf-azul", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Azul", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 219.90, vars: [v("", "exemplo")] },
+  { id: "ex-inf-redonda", cat: "infantil", marca: "Infantil", nome: "Armação Infantil Redonda", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 239.90, vars: [v("", "exemplo")] },
+  { id: "ex-inf-sol", cat: "infantil", marca: "Infantil", nome: "Óculos de Sol Infantil", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 149.90, vars: [v("", "exemplo")] },
+  { id: "ex-lc-colorida", cat: "contato", marca: "Lentes de contato", nome: "Lentes de Contato Coloridas", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 169.90, vars: [v("", "exemplo")] },
+  { id: "ex-lc-solucao", cat: "contato", marca: "Lentes de contato", nome: "Solução Multiuso 360 ml", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 49.90, vars: [v("", "exemplo")] },
+  { id: "ex-lc-estojo", cat: "contato", marca: "Lentes de contato", nome: "Estojo para Lentes", desc: "Produto exemplo. Aqui entram a foto e a descrição do modelo da loja.", preco: 19.90, vars: [v("", "exemplo")] },
 ];
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -1371,6 +1426,25 @@ const fimFileira = (id, nome, n) => {
     </div>
   </li>`;
 };
+/* dois banners no meio da vitrine: a promocao e o orcamento das lentes */
+const BANNERS = `<li class="prateleira vitrine-banners" data-cat="banners">
+  <div class="banner-meio">
+    <div class="banner-texto">
+      <h3>Comprou o de grau, ganha um de sol</h3>
+      <p>Na compra dos óculos de grau completos, o óculos de sol é presente.</p>
+      <button class="btn" type="button" data-ir="sol">Ver os óculos de sol</button>
+    </div>
+    <div class="banner-foto banner-rosa"><img src="img/fotos/photo-f137040103-960.jpg" width="960" height="960" alt="" loading="lazy"></div>
+  </div>
+  <div class="banner-meio">
+    <div class="banner-texto">
+      <h3>Lentes certas para o seu grau</h3>
+      <p>Mande a foto da receita e receba as opções e os valores pelo WhatsApp.</p>
+      <a class="btn" href="#orcamento">Pedir orçamento</a>
+    </div>
+    <div class="banner-foto banner-ceu"><img src="img/fotos/photo-f83124698-960.jpg" width="960" height="640" alt="" loading="lazy"></div>
+  </div>
+</li>`;
 $("#vitrine").innerHTML = CATEGORIAS.map(([id, nome]) => {
   const lista = PRODUTOS.filter((p) => p.cat === id);
   return `<li class="prateleira" data-cat="${id}">
@@ -1382,8 +1456,8 @@ $("#vitrine").innerHTML = CATEGORIAS.map(([id, nome]) => {
         <button class="seta" type="button" data-passo="1" aria-label="Mais em ${nome}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
     </div>
-    <ul class="fileira" aria-labelledby="fileira-${id}">${lista.map((p) => cartao(p)).join("")}${fimFileira(id, nome, lista.length)}</ul>
-  </li>`;
+    <ul class="fileira" aria-labelledby="fileira-${id}">${lista.map((p) => cartao(p)).join("")}</ul>
+  </li>${id === "sol" ? BANNERS : ""}`;
 }).join("");
 
 /* ---------- busca e marcas: a prateleira do resultado fica escondida no topo da vitrine ---------- */
